@@ -1,10 +1,8 @@
 const express = require("express")
 const { UserModel } = require("../Models/userModel.js")
 const jswt = require("jsonwebtoken")
-
 const bcrypt = require("bcrypt")
 const { dateLogger } = require("../Middlewares/dateLogger.js")
-
 const userRouter = express.Router()
 
 userRouter.post("/register", dateLogger, async (req, res) => {
@@ -66,7 +64,6 @@ userRouter.post("/login", async (req, res) => {
 })
 
 //to get the partiucalr user
-
 userRouter.get("/user/:id", async (req, res) => {
   const { id } = req.params
   try {
@@ -77,7 +74,6 @@ userRouter.get("/user/:id", async (req, res) => {
   }
 })
 // to update the particular user
-
 userRouter.patch("/user/:id", async (req, res) => {
   const { id } = req.params
   try {
